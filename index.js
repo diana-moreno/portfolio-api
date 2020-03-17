@@ -9,7 +9,7 @@ api.use(cors())
 api.use(bodyParser.json())
 const jsonBodyParser = bodyParser.json()
 
-const contactAddress = process.env.GMAIL_ADDRESS
+const contactAddress = "d7@hotmail.es"
 const mailer = nodemailer.createTransport({
   service: "hotmail",
   auth: {
@@ -23,7 +23,7 @@ api.post('/contact', jsonBodyParser, async (req, res) => {
   try {
     mailer.sendMail(
       {
-        from: [contactAddress],
+        from: req.body.from,
         to: [contactAddress],
         subject: `Message in Porfolio from ${name}`,
         html:  `<h3>Hello Diana,</h3>
