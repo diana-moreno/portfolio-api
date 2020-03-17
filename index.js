@@ -44,5 +44,5 @@ api.post('/contact', jsonBodyParser, async (req, res) => {
       res.status(500).json(message)
     }
 })
+api.listen(process.env.PORT || 3000)
 
-api.listen(3000)
