@@ -13,8 +13,8 @@ const contactAddress = "d7@hotmail.es"
 const mailer = nodemailer.createTransport({
   service: "hotmail",
   auth: {
-    user: process.env.GMAIL_ADDRESS,
-    pass: process.env.GMAIL_PASSWORD,
+    user: "wheely.reservations@gmail.com",
+    pass: "wheely123",
   },
 })
 
