@@ -12,7 +12,7 @@ const jsonBodyParser = bodyParser.json()
 const contactAddress = process.env.GMAIL_ADDRESS
 const myEmail = process.env.MY_EMAIL
 const mailer = nodemailer.createTransport({
-  service: "hotmail",
+  service: "gmail",
   auth: {
     user: process.env.GMAIL_ADDRESS,
     pass: process.env.GMAIL_PASSWORD,
@@ -25,7 +25,7 @@ api.post('/contact', jsonBodyParser, async (req, res) => {
     mailer.sendMail(
       {
         from: [contactAddress],
-        to: [contactAddress],
+        to: [contactAddress, myEmail],
         subject: `Message in Porfolio from ${name}`,
         html:  `<h3>Hello Diana,</h3>
         <p>Someone sent you a message: <p>
