@@ -11,7 +11,7 @@ const jsonBodyParser = bodyParser.json()
 
 const contactAddress = process.env.GMAIL_ADDRESS
 const mailer = nodemailer.createTransport({
-  service: "hotmail",
+  service: "gmail",
   auth: {
     user: process.env.GMAIL_ADDRESS,
     pass: process.env.GMAIL_PASSWORD,
